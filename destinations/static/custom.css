@@ -1,0 +1,14 @@
+.listimg{
+	height: 55%
+}
+
+.customcard{
+	width: 20rem;height: 25rem; margin-bottom: 15px
+}
+
+.custom-footer{ 
+	display: text;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
