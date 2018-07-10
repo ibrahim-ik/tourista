@@ -22,21 +22,25 @@
 		<hr>
 
 
-<div class="row">
-  {% for destination in destinations %}
-  <a class="col-md-4" href="{% url 'destination-detail' destination.id %}">
+<div class="row ">
+  	{% for destination in destinations %}
+    		<div class="card customcard col-md-4" >
+  				<img class="card-img-top listimg " src="{{destination.pretty_picture.url}}" alt="Card image cap">
+  				<div class="card-body ">
+    				<h5 class="card-title">{{destination.name}}</h5>
 
-    <div class="card customcard" >
-  <img class="card-img-top listimg"  src="{{destination.pretty_picture.url}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{destination.name}}</h5>
-
-
-
-    <p class="card-text">{{destination.activities}}</p>
-  </div>
-</div>
-  </a>
-  {% endfor %}
+    				<button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#{{destination.id}}" aria-expanded="false" aria-controls="collapseExample">
+    				ACTIVITIES !!!
+  					</button>
+					<div class="collapse" id="{{destination.id}}">
+  						<div class="card-body">
+    						{{destination.activities}}
+  						</div>
+					</div>
+  				</div>
+		</div>
+  	{% endfor %}
 </div>
 {% endblock content %}
+<!-- <a class="col-md-4" href="{% url 'destination-detail' destination.id %}">
+	</a> -->
